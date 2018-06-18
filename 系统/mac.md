@@ -20,7 +20,9 @@
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
     * [替换brew源为国内源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+    
     ```
         cd "$(brew --repo)"
         git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
