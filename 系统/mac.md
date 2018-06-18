@@ -21,17 +21,16 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-    * [替换brew源为国内源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
-    
-    ```
-        cd "$(brew --repo)"
-        git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+* [替换brew源为国内源](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+ ```
+     cd "$(brew --repo)"
+     git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 
-        cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-        git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+     cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+     git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 
-        brew update
-    ```
+     brew update
+  ```
 
 * [shadowsocks](https://github.com/shadowsocks/shadowsocks)
     * [mac客户端](https://github.com/shadowsocks/shadowsocks-iOS/releases) [点击下载](https://github.com/shadowsocks/shadowsocks-iOS/releases/download/2.6.3/ShadowsocksX-2.6.3.dmg)
