@@ -11,7 +11,7 @@
 wget https://www.baidu.com/ 
 ```
 
-![http协议](http-bs.jpg)
+![http协议](./images/http-bs.jpg)
 
 
 ---
@@ -20,19 +20,19 @@ wget https://www.baidu.com/
 
 ```
 func main()  {
-	l , _ := net.Listen("tcp", ":8080")
-	conn , _ := l.Accept()
-	b := make([]byte,1024)
-	n, _ := conn.Read(b)
-	fmt.Println(string(b[:n]))
-	conn.Write([]byte("HTTP/1.1 200 OK\r\n\r\n hello world"))
-	conn.Close()
-	l.Close()
+    l , _ := net.Listen("tcp", ":8080")
+    conn , _ := l.Accept()
+    b := make([]byte,1024)
+    n, _ := conn.Read(b)
+    fmt.Println(string(b[:n]))
+    conn.Write([]byte("HTTP/1.1 200 OK\r\n\r\n hello world"))
+    conn.Close()
+    l.Close()
 }
 // 打印数据
-GET / HTTP/1.1	请求方法  路劲 协议版本\r\n
+GET / HTTP/1.1  请求方法  路劲 协议版本\r\n
 User-Agent: Wget/1.19.5 浏览器头：浏览器类型\r\n
-Accept: */*		接受格式
+Accept: */*     接受格式
 Accept-Encoding: identity  接受编码
 Host: localhost:8080   请求的域名
 Connection: Keep-Alive  连接保持策略
@@ -70,22 +70,22 @@ HTTP/1.1 200 OK\r\n\r\n hello world
 ```
 var resp = []byte("HTTP/1.1 200 OK\r\nContent-Length: 11\r\n\r\nhello world")
 func main()  {
-	l , _ := net.Listen("tcp", ":8080")
-	defer l.Close()
-	for {
-		conn , _ := l.Accept()
-		go func() {
-			defer conn.Close()
-			for {
-				b := make([]byte,1024)
-				_, err := conn.Read(b)
-				if err != nil {
-					break
-				}
-				conn.Write(resp)
-			}
-		}()
-	}
+    l , _ := net.Listen("tcp", ":8080")
+    defer l.Close()
+    for {
+        conn , _ := l.Accept()
+        go func() {
+            defer conn.Close()
+            for {
+                b := make([]byte,1024)
+                _, err := conn.Read(b)
+                if err != nil {
+                    break
+                }
+                conn.Write(resp)
+            }
+        }()
+    }
 }
 ```
 
@@ -103,7 +103,7 @@ func main()  {
 
 #### part2. 服务端并发与优化
 
-![net包实现原理](tcp-1.png)
+![net包实现原理](./images/tcp-1.png)
 
 
 ---
@@ -158,26 +158,3 @@ server response length = Header + Body
 
 --- 
 # THANK YOU :smile:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
